@@ -116,9 +116,9 @@ prompt_git() {
     ref="◈ $(git describe --exact-match --tags HEAD 2> /dev/null)" || \
     ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment yellow 73
     else
-      prompt_segment green $CURRENT_FG
+      prompt_segment green 16
     fi
 
     local ahead behind
@@ -221,7 +221,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   # promt_segment BG FG TEXT
-  prompt_segment blue 73 '%~'
+  prompt_segment blue 73 '%B%~%b'
 }
 
 # Virtualenv: current working virtualenv
