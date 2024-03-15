@@ -92,7 +92,7 @@ prompt_end() {
 # %B = bold and %b = end bold
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%B%m%b"
+    prompt_segment black default "%(!.%{%F{yellow}%}.)%{%F{223}%}%B%m%b%f"
   fi
 }
 
