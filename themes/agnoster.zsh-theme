@@ -116,7 +116,7 @@ prompt_git() {
     ref="◈ $(git describe --exact-match --tags HEAD 2> /dev/null)" || \
     ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow 73
+      prompt_segment yellow 16
     else
       prompt_segment green 16
     fi
