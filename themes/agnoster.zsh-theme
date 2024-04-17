@@ -92,8 +92,8 @@ prompt_end() {
 # %B = bold and %b = end bold
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    #              BG    FG      text
-    prompt_segment 57 255 "%(!.%{%F{yellow}%}.)%{%F{219}%}%B%m%b%f"
+    #              BG FG      text
+    prompt_segment 57 253 "%(!.%{%F{yellow}%}.)%{%F{253}%}%B%m%b%f"
   fi
 }
 
@@ -222,7 +222,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   # promt_segment BG FG TEXT
-  prompt_segment 125 217 '%B%~%b'
+  prompt_segment 125 253 '%B%~%b'
 }
 
 # Virtualenv: current working virtualenv
