@@ -119,7 +119,7 @@ prompt_git() {
     if [[ -n $dirty ]]; then
       prompt_segment 172 16 # yellow black
     else
-      prompt_segment 106 16 # green black
+      prompt_segment 72 16 # green black
     fi
 
     local ahead behind
