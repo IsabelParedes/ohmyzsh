@@ -92,7 +92,8 @@ prompt_end() {
 # %B = bold and %b = end bold
 prompt_context() {
   if [[ "$USERNAME" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)%{%F{223}%}%B%m%b%f"
+    #              BG    FG      text
+    prompt_segment 57 255 "%(!.%{%F{yellow}%}.)%{%F{219}%}%B%m%b%f"
   fi
 }
 
@@ -116,9 +117,9 @@ prompt_git() {
     ref="◈ $(git describe --exact-match --tags HEAD 2> /dev/null)" || \
     ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow 16
+      prompt_segment 172 16 # yellow black
     else
-      prompt_segment green 16
+      prompt_segment 106 16 # green black
     fi
 
     local ahead behind
@@ -221,7 +222,7 @@ prompt_hg() {
 # Dir: current working directory
 prompt_dir() {
   # promt_segment BG FG TEXT
-  prompt_segment blue 73 '%B%~%b'
+  prompt_segment 125 217 '%B%~%b'
 }
 
 # Virtualenv: current working virtualenv
